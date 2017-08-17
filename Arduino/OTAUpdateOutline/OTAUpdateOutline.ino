@@ -6,6 +6,9 @@
 const char* ssid = "";
 const char* password = "";
 
+char dataString[50] = {0};
+int a =0; 
+
 void setup() {
   Serial.begin(115200);
   Serial.println("Booting");
@@ -18,13 +21,13 @@ void setup() {
   }
 
   // Port defaults to 8266
-   ArduinoOTA.setPort(8266);
+   //ArduinoOTA.setPort(8266);
 
   // Hostname defaults to esp8266-[ChipID]
-   ArduinoOTA.setHostname("myesp8266");
+   //ArduinoOTA.setHostname("myesp8266");
 
   // No authentication by default
-  // ArduinoOTA.setPassword((const char *)"123");
+  //ArduinoOTA.setPassword((const char *)"123");
 
   ArduinoOTA.onStart([]() {
     Serial.println("Start");
@@ -51,4 +54,9 @@ void setup() {
 
 void loop() {
   ArduinoOTA.handle();
+
+  a++;                          // a value increase every loop
+  sprintf(dataString,"%02X",a); // convert a value to hexa 
+  Serial.println(dataString);   // send the data
+  delay(1000);
 }
