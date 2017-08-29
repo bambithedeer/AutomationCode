@@ -3,8 +3,8 @@
 #include <WiFiUdp.h>
 #include <ArduinoOTA.h>
 
-const char* ssid = "";
-const char* password = "";
+const char* ssid = "Baumer";
+const char* password = "5187843720";
 
 char dataString[50] = {0};
 int a =0; 
@@ -55,6 +55,8 @@ void setup() {
 void loop() {
   ArduinoOTA.handle();
 
+  delay(10000);
+  Serial.println("Starting Stream.......");
   a++;                          // a value increase every loop
   sprintf(dataString,"%02X",a); // convert a value to hexa 
   Serial.println(dataString);   // send the data
