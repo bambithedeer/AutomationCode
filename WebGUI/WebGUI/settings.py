@@ -25,7 +25,7 @@ SECRET_KEY = '!7(5vx5!c!b&#mu7)w7vymncf^6@g0&=)twmm^t4d^$5h$$8$v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost"]
+ALLOWED_HOSTS = ["localhost", "influent-komododragon-4876.dataplicity.io", "127.0.0.1"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'login.apps.LoginConfig',
 ]
 
 MIDDLEWARE = [
